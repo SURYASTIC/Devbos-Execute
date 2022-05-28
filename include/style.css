@@ -1,0 +1,510 @@
+/*********************************************************************************
+** The contents of this file are subject to the vtiger CRM Public License Version 1.0
+* ("License"); You may not use this file except in compliance with the License
+* The Original Code is:  vtiger CRM Open Source
+* The Initial Developer of the Original Code is vtiger.
+* Portions created by vtiger are Copyright (C) vtiger.
+* All Rights Reserved.
+********************************************************************************/
+
+#page-header {
+  z-index: 99;
+  width: 98.5%;
+  margin-left: 0.75%;
+  top: 5.625rem;
+  transition: top 100ms linear, margin 100ms linear, padding 100ms linear;
+}
+
+#page-header.page-header_collapsed {
+  width: 100%; 
+  margin-left: 0;
+  padding: 0.35rem;
+  border-radius: 0;
+}
+
+#page-header.page-header_stickup {
+  top: 2.5rem;
+}
+
+#page-header.page-header_sticky {
+  margin-top: 0;
+}
+
+#page-header.has-no-global-header {
+  top: 0;
+}
+
+#page-header-surplus {
+  overflow: hidden;
+  transition: height 150ms linear;
+}
+
+#page-header-icon {
+  transition: width 180ms linear, height 180ms linear;
+}
+
+.page-header-relative {
+    position: relative;
+    top: 0 !important;
+}
+
+/* =========================================================== */
+/* ========================== CBDS =========================== */
+/* =========================================================== */
+
+/* ---- CBDS Color schemes ---- */
+
+.cbds-bg-white {
+	background-color: #ffffff;
+}
+
+.cbds-bg-blue--main {
+	background-color: #1589EE;
+}
+
+.cbds-bg-blue--gray {
+	background-color: #0B497F;
+}
+
+.cbds-bg-blue--light {
+	background-color: #1693FF;
+}
+
+.cbds-bg-blue--dark {
+	background-color: #062540;
+}
+
+.cbds-bg-blue--bright {
+	background-color: #1484E5;
+}
+
+.cbds-bg-compl-red--bright {
+	background-color: #EE1F15;
+}
+
+.cbds-bg-compl-red--sober {
+	background-color: #CC2E26;
+}
+
+#listview-tui-grid .cbds-color-compl-red--sober,
+.cbds-color-compl-red--sober {
+	color: #CC2E26;
+}
+
+.cbds-bg-compl-red--faint {
+	background-color: #FF7656;
+}
+
+.cbds-bg-compl-green--light {
+	background-color: #C2CC26;
+}
+
+.cbds-bg-compl-green--dark {
+	background-color: #A8B207;
+}
+
+.cbds-bg-compl-orange--dark {
+	background-color: #B26E00;
+}
+
+.cbds-bg-compl-orange--light {
+	background-color: #FFA516;
+}
+
+.cbds-bg-compl-grey--light {
+	background-color: rgb(235, 237, 238);
+}
+
+.cbds-bg-compl-grey--medium {
+	background-color: #aeafaf;
+}
+
+.cbds-bg-compl-grey--dark {
+	background-color: #7e7f7f;
+}
+
+/* ---- CBDS Layering ---- */
+
+/* Small, centered box shadow */
+.cbds-shadow-c--small {
+	-webkit-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.25);
+	box-shadow: 0px 0px 4px -1px rgba(0,0,0,0.25);
+}
+
+/* ---- CBDS coreBOS components ---- */
+.cbds-last-visited {
+	right: 0;
+	top: 90px;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    z-index: 199;
+}
+
+/* ---- CBDS tooltip ---- */
+.cbds-tooltip__trigger .cbds-tooltip__wrapper {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(1rem);
+}
+.cbds-tooltip__trigger:hover .cbds-tooltip__wrapper {
+  z-index: 100000;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 100ms linear 100ms, transform 100ms linear 100ms;
+}
+
+.cbds-tooltip__wrapper--inner {
+  position:absolute;
+  color: #080707 !important;
+  padding-bottom: 1rem;
+  -webkit-transform: translateY(-100%) translateY(-1rem) translateX(-50%) translateX(0.5rem);
+  -moz-transform: translateY(-100%) translateY(-1rem) translateX(-50%) translateX(0.5rem);
+  transform: translateY(-100%) translateY(-1rem) translateX(-50%) translateX(0.5rem);
+}
+
+.cbds-tooltip--listview .slds-popover {
+	position: absolute;
+	top: -50%;
+	right: 0;
+	transform: translateY(-100%);
+	opacity: 0;
+	text-align: left;
+	transition: opacity 100ms linear;
+}
+
+.cbds-tooltip-parent:hover .slds-popover {
+	opacity: 1;
+}
+
+.cbds-massedit {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+	transition: opacity 100ms linear 0ms, z-index 0ms linear 100ms;
+	-moz-transition: opacity 100ms linear 0ms, z-index 0ms linear 100ms;
+	-webkit-transition: opacity 100ms linear 0ms, z-index 0ms linear 100ms;
+}
+
+.cbds-massedit--active {
+	opacity: 1;
+	z-index: 100000;
+	transition: opacity 150ms linear 50ms, z-index 0ms linear 0ms;
+	-moz-transition: opacity 150ms linear 50ms, z-index 0ms linear 0ms;
+	-webkit-transition: opacity 150ms linear 50ms, z-index 0ms linear 0ms;
+}
+
+.cbds-advanced-search--inactive {
+	overflow: hidden;
+	opacity: 0;
+	height: 0;
+	transition: opacity 100ms linear 0ms, height 0ms linear 0ms;
+}
+
+.cbds-advanced-search--active {
+	opacity: 1;
+	height: auto;
+	transition: opacity 100ms linear 50ms, height 0ms linear 0ms;
+	overflow: visible;
+}
+
+/* ---- CBDS expansion on LDS components ---- */
+#global-header {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  transform: translateY(0);
+  transition: transform 100ms linear;
+}
+#global-header.header-scrolling {
+  -webkit-transform: translateY(-3.125rem);
+  -moz-transform: translateY(-3.125rem);
+  transform: translateY(-3.125rem);
+}
+
+/* ---- CBDS Inventorydetails block ---- */
+
+.cbds-detail-block {
+	width: 100%;
+}
+.cbds-inventoryline_template {
+	display: none;
+}
+.cbds-inventoryline {
+	background-color: #ffffff;
+	position: relative;
+	border-top: 3px solid #32435c;
+}
+.cbds-inventoryline__headingswrapper {
+  transition: padding 100ms ease;
+  overflow: hidden;
+}
+.cbds-inventoryline__headingswrapper_show {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+.cbds-inventoryline__headings {
+  top: -100%;
+  width: 100%;
+  transition: top 100ms ease;
+}
+.cbds-inventoryline__headingswrapper_show .cbds-inventoryline__headings {
+  top: 0;
+}
+.cbds-inventoryline__extra {
+	transform: scaleY(0);
+	height: 0;
+	transform-origin: 0 0;
+	transition: transform 0ms linear;
+}
+.cbds-inventoryline__extra_expanded {
+	transform: scaleY(1);
+	height: auto;
+	transition: transform 100ms linear;
+}
+.cbds-inventoryline .slds-has-inline-listbox .slds-combobox__input[value] {
+	box-shadow: none;
+}
+.cbds-form-element__help_fixed{
+	position: absolute;
+	background-color: rgba(255,255,255,0.7);
+	z-index: 1;
+	padding: 0 10px;
+}
+.cbds-inventoryline_taxcol-hidden {
+	width: 0;
+	padding: 0;
+	display: none;
+}
+
+/* Images */
+.cbds-image-container {
+	text-align: center;
+	overflow: hidden;
+}
+.cbds-image-container img {
+	height: 100%;
+	width: auto;
+}
+
+/* Aggregation block */
+.cbds-product-lines-aggr {
+	background-color: rgb(230,230,230);
+	color: rgb(140,140,140);
+	padding: 1rem;
+}
+.cbds-product-lines-aggr input {
+	background-color: rgb(230,230,230);
+	vertical-align: baseline;
+	padding: 0;
+	font-size: 1.05rem;
+}
+
+/* Autocomplete */
+.slds-listbox__item:last-child {
+	border-bottom: none;
+}
+.cbds-product-search-title {
+	color: rgb(22, 50, 92);
+}
+
+/* Tools */
+.cbds-detail-line-dragtool {
+	cursor: pointer;
+}
+
+.cbds-button_delete {
+	background-color: #d17575;
+}
+.cbds-button_delete use,
+.cbds-button_delete svg {
+	color: #ffffff;
+	fill: #ffffff;
+}
+.cbds-detail-line-extratool svg {
+	transition: transform 100ms linear;
+}
+.cbds-exp-coll-icon_expanded {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/* Aggregations */
+.cbds-inventoryaggr__taxes_group {
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: opacity 100ms linear;
+}
+.cbds-inventoryaggr__taxes_group.active {
+	height: auto;
+	opacity: 1;
+}
+
+/* ---- CBDS animations ---- */
+/* -- Source: animate.css */
+
+.cbds-anim-slidein--left {
+	-webkit-animation-name: slideInLeft;
+	animation-name: slideInLeft;
+	-webkit-animation-duration: 0.1s;
+	animation-duration: 0.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;	
+}
+
+.cbds-anim-slidein--right {
+	-webkit-animation-name: slideInRight;
+	animation-name: slideInRight;
+	-webkit-animation-duration: 0.1s;
+	animation-duration: 0.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;	
+}
+
+.cbds-anim-slideout--left {
+	-webkit-animation-name: slideOutLeft;
+	animation-name: slideOutLeft;
+	-webkit-animation-duration: 0.1s;
+	animation-duration: 0.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;	
+}
+
+.cbds-anim-slideout--right {
+	-webkit-animation-name: slideOutRight;
+	animation-name: slideOutRight;
+	-webkit-animation-duration: 0.1s;
+	animation-duration: 0.1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;	
+}
+
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+/* =========================================================== */
+/* ===================== SOME OVERRIDES ====================== */
+/* =========================================================== */
+
+#report-steps > .steps {
+  width: 20%;
+}
+#report-steps > .content {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0;
+  padding: 1.5%;
+}
+#report-steps > .content > .body {
+  width: 100%;
+  padding: 2% 0.5rem;
+}
+#cbds-advfilt-groups > .slds-expression__group {
+  padding: 0.75rem !important;
+}
+#mnuTab2.cv-advfilt-tab {
+  overflow: visible;
+}
